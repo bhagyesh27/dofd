@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'
+require 'mina/rvm'
 
 
 set :domain,  '13.233.112.15'
@@ -13,7 +13,7 @@ set :branch,     'master'
 
 
 task :local_environment do
-   invoke :'rbenv:load'
+   invoke :'rvm:use', 'ruby-2.7.1'
 end
 
 task deploy: :local_environment do
